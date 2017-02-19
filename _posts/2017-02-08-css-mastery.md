@@ -8,6 +8,26 @@ layout: default
 <p>The <strong>Moon</strong>…[etc]</p> 
 ```
 
+{% highlight javascript %}
+import { createDuration } from '../duration/create';
+import { createLocal } from '../create/local';
+import { isMoment } from '../moment/constructor';
+
+export function from (time, withoutSuffix) {
+    if (this.isValid() &&
+            ((isMoment(time) && time.isValid()) ||
+             createLocal(time).isValid())) {
+        return createDuration({to: this, from: time}).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+
+export function fromNow (withoutSuffix) {
+    return this.from(createLocal(), withoutSuffix);
+}
+{% endhighlight %}
+
 ![]({{site.baseurl}}/images/line-box.png)
 
 Finally, the line height defines the total height of the line box. This is more commonly known as 
