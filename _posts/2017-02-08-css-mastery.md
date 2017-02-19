@@ -8,7 +8,7 @@ layout: default
 <p>The <strong>Moon</strong>…[etc]</p> 
 ```
 
-![](https://yyvanyang.github.io/line-box.png)
+![]({{site.baseurl}}/images/line-box.png)
 
 Finally, the line height defines the total height of the line box. This is more commonly known as 
 line spacing , or in typographic terms, leading (pronounced as “ledding”) due to the blocks of 
