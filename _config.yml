@@ -7,7 +7,7 @@
 
 # Site settings
 title: "Code for better life"
-title-font-size: '4em' # a provision to adjust the size of your title. If it is too long then do resize to a smaller value. By default it will be 4em.
+title-font-size: '3em' # a provision to adjust the size of your title. If it is too long then do resize to a smaller value. By default it will be 4em.
 
 email: zjlgdx@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
