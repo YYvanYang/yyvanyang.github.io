@@ -6,7 +6,8 @@
     background: #fff;
 
     .highlighter-rouge & {
-      background: #eef;
+      // background: #eef;
+      background: rgba(0,0,0,0.85);
     }
 
     .c     { color: #998; font-style: italic } // Comment

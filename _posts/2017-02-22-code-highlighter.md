@@ -6,9 +6,18 @@ layout: default
 
 ```js
 
-function main() {
-  console.log('Hello world');
+//custom shape
+class OneNote extends mojs.CustomShape {
+  getShape () { return `<path d="M18.709
+	...
+"/>`; }
 }
+mojs.addShape( 'oneNote', OneNote ); 
+
+const note1 = new mojs.ShapeSwirl({
+  shape:    'oneNote',
+  ...
+});
 
 ```
 
