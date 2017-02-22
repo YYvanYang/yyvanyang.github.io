@@ -87,7 +87,7 @@ pre {
     -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
     font-size: 0.75rem;
-    content: attr(rel);
+    //content: attr(rel);
     color: white;
     position: absolute;
     top: 0;
@@ -125,11 +125,22 @@ pre {
 }
 
 .highlighter-rouge.language-css pre::before {
+    content: "css";
     background: #FF9800
 }
 
 .highlighter-rouge.language-html pre::before {
+    content: "html";
     background: #4CAF50
+
+}
+
+.highlighter-rouge.language-jQuery pre::before {
+    content: "jQuery"
+}
+
+.highlighter-rouge.language-JSX pre::before {
+    content: "JSX"
 }
 
 .highlighter-rouge.language-jQuery pre::before,
