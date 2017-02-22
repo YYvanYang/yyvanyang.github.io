@@ -49,5 +49,157 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "fonts",
         "syntax-highlighting"
 ;
+
+
+p,pre,figure {
+    margin: 0 0 1rem 0
+}
+
+pre {
+    font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+    clear: both;
+    color: white;
+    background: rgba(0,0,0,0.85);
+    padding: 0;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    position: relative;
+    line-height: 28px;
+    min-width: 100%
+}
+
+pre[rel] {
+    padding-top: 21px
+}
+
+pre[rel]::before {
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    font-size: 0.75rem;
+    content: attr(rel);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #999;
+    padding: 1px 0;
+    text-indent: 15px
+}
+
+@supports ((-webkit-writing-mode: vertical-lr) or (writing-mode: vertical-lr)) {
+    pre[rel] {
+        padding-top:0;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+    pre[rel]::before {
+        width: 30px;
+        line-height: 2;
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 0 1rem 1rem 0
+    }
+
+    pre code {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+    }
+}
+
+pre[rel="CSS"]::before {
+    background: #FF9800
+}
+
+pre[rel="HTML"]::before {
+    background: #4CAF50
+}
+
+pre[rel="jQuery"]::before,pre[rel="JavaScript"]::before,pre[rel="JSX"]::before {
+    background: #9C27B0
+}
+
+pre[rel="JavaScript"]::before {
+    content: "JS"
+}
+
+pre code {
+    font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+    font-size: 16px;
+    line-height: 1.75;
+    background: none;
+    padding: 1.5rem;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow-x: scroll
+}
+
+pre code::-webkit-scrollbar {
+    width: .5em;
+    height: .5em
+}
+
+pre code::-webkit-scrollbar-thumb {
+    background: #666
+}
+
+pre code::-webkit-scrollbar-track {
+    background: none
+}
+
+body pre code {
+    scrollbar-face-color:#666;scrollbar-track-color:none}
+
+@media (max-width: 625px) {
+    pre {
+        max-height:100vh
+    }
+
+    pre code {
+        max-height: 100vh
+    }
+}
+
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: inherit;
+    padding: inherit 0;
+    margin-top: 1.5rem;
+    background: -webkit-linear-gradient(left, rgba(255,235,59,0.25) 50%, rgba(255,235,59,0));
+    background: linear-gradient(to right, rgba(255,235,59,0.25) 50%, rgba(255,235,59,0));
+    pointer-events: none;
+    white-space: pre
+}
+
+p>code,li>code,dd>code,td>code {
+    background: #eee;
+    padding: 0 5px 2px;
+    border-radius: 4px;
+    position: relative;
+    top: -1px;
+    margin: 0 3px 0 1px;
+    font-size: 90%;
+    overflow-wrap: break-word;
+    word-wrap: break-word
+}
