@@ -61,7 +61,7 @@ pre {
     font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
     clear: both;
     color: white;
-    //background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.85);
     padding: 0;
     -moz-tab-size: 2;
     -o-tab-size: 2;
@@ -78,11 +78,11 @@ pre {
     min-width: 100%
 }
 
-pre[rel] {
+[class|=language].highlighter-rouge pre {
     padding-top: 21px
 }
 
-pre[rel]::before {
+[class|=language].highlighter-rouge pre::before {
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
@@ -93,13 +93,13 @@ pre[rel]::before {
     top: 0;
     left: 0;
     width: 100%;
-    //background: #999;
+    background: #999;
     padding: 1px 0;
     text-indent: 15px
 }
 
 @supports ((-webkit-writing-mode: vertical-lr) or (writing-mode: vertical-lr)) {
-    pre[rel] {
+    [class|=language].highlighter-rouge pre {
         padding-top:0;
         display: -webkit-box;
         display: -moz-box;
@@ -107,7 +107,7 @@ pre[rel]::before {
         display: flex
     }
 
-    pre[rel]::before {
+    [class|=language].highlighter-rouge pre::before {
         width: 30px;
         line-height: 2;
         position: relative;
@@ -124,19 +124,19 @@ pre[rel]::before {
     }
 }
 
-pre[rel="CSS"]::before {
+.language-css pre::before {
     background: #FF9800
 }
 
-pre[rel="HTML"]::before {
+.language-html pre::before {
     background: #4CAF50
 }
 
-pre[rel="jQuery"]::before,pre[rel="JavaScript"]::before,pre[rel="JSX"]::before {
+.language-jQuery pre::before,.language-js pre::before,.language-JavaScript pre::before,.language-JSX pre::before,.language-jsx pre::before {
     background: #9C27B0
 }
 
-pre[rel="JavaScript"]::before {
+.language-js pre::before,.language-JavaScript pre::before {
     content: "JS"
 }
 
@@ -157,13 +157,13 @@ pre code::-webkit-scrollbar {
     height: .5em
 }
 
-// pre code::-webkit-scrollbar-thumb {
-//     background: #666
-// }
+pre code::-webkit-scrollbar-thumb {
+    background: #666
+}
 
-// pre code::-webkit-scrollbar-track {
-//     background: none
-// }
+pre code::-webkit-scrollbar-track {
+    background: none
+}
 
 body pre code {
     scrollbar-face-color:#666;scrollbar-track-color:none}
@@ -185,8 +185,8 @@ body pre code {
     line-height: inherit;
     padding: inherit 0;
     margin-top: 1.5rem;
-    // background: -webkit-linear-gradient(left, rgba(255,235,59,0.25) 50%, rgba(255,235,59,0));
-    // background: linear-gradient(to right, rgba(255,235,59,0.25) 50%, rgba(255,235,59,0));
+    background: -webkit-linear-gradient(left, rgba(255,235,59,0.25) 50%, rgba(255,235,59,0));
+    background: linear-gradient(to right, rgba(255,235,59,0.25) 50%, rgba(255,235,59,0));
     pointer-events: none;
     white-space: pre
 }
