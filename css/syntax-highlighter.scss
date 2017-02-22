@@ -95,7 +95,8 @@ pre {
     width: 100%;
     background: #999;
     padding: 1px 0;
-    text-indent: 15px
+    text-indent: 15px;
+    box-sizing: border-box;
 }
 
 @supports ((-webkit-writing-mode: vertical-lr) or (writing-mode: vertical-lr)) {
