@@ -24,3 +24,16 @@ dotnet restore
 dotnet run 
 ```
 
+```js
+
+function main() {
+  console.log('Hello world');
+}
+```
+
+```css
+
+.hello-world {
+  width: 100%;
+}
+```
