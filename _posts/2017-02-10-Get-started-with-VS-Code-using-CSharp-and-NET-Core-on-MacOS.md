@@ -24,6 +24,8 @@ dotnet restore
 dotnet run 
 ```
 
+# js
+
 ```js
 
 function main() {
@@ -31,6 +33,7 @@ function main() {
 }
 ```
 
+# css
 ```css
 
 .hello-world {
