@@ -124,15 +124,19 @@ pre {
     }
 }
 
-.language-css pre::before {
+.highlighter-rouge.language-css pre::before {
     background: #FF9800
 }
 
-.language-html pre::before {
+.highlighter-rouge.language-html pre::before {
     background: #4CAF50
 }
 
-.language-jQuery pre::before,.language-js pre::before,.language-JavaScript pre::before,.language-JSX pre::before,.language-jsx pre::before {
+.highlighter-rouge.language-jQuery pre::before,
+.highlighter-rouge.language-js pre::before,
+.highlighter-rouge.language-JavaScript pre::before,
+.highlighter-rouge.language-JSX pre::before,
+.highlighter-rouge.language-jsx pre::before {
     background: #9C27B0
 }
 
