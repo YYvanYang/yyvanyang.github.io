@@ -49,7 +49,7 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "fonts",
+        //"fonts",
         "syntax-highlighting"
 ;
 
@@ -58,7 +58,7 @@ p,pre,figure {
 }
 
 pre {
-    font-family: "Operator Mono SSm", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+    font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
     clear: both;
     color: white;
     background: rgba(0,0,0,0.85);
