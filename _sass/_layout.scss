@@ -57,8 +57,29 @@
 
     > li {
         /*margin-bottom: $spacing-unit / 2;*/
+      
+      border-left: 3px solid #21759b;
+      margin-bottom: 10px;
+      font-size: 20px;
+      padding-left: 10px;
+      
+      a:link,  a:visited, a:active {
+        color: #21759b;
+        transition: all 0.4s linear 0s;
+      }
+      
+      a:hover {
+        margin-left: 30px;
+        color: #0f3647;
+        text-decoration: none;
+      }
     }
 }
+
+
+
+    
+
 
 .post-meta {
     font-size: $small-font-size;
