@@ -9,10 +9,10 @@ layout: default
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
-        <p>
+        
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           <span class="post-meta"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
-        </p>
+      
          
       </li>
 
