@@ -128,7 +128,7 @@ From inside a stacking context, it doesn’t matter how large or small the z-ind
 </html>
 ```
 
-![]({{site.baseurl}}/images/stacking-content.jpg)
+![]({{site.baseurl}}/images/stacking-content.png)
 
 “In preceding code. Containers A, B, C, and D are all absolutely positioned, where C is a child element of B. Containers C and D have z-index applied, but since container B has an opacity lower than 1, it creates a new stacking context, separate from the others. The z-index will not place C in front of D, no matter how high the number”
 
