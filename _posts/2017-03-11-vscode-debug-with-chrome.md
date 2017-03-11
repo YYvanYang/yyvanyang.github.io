@@ -11,8 +11,8 @@ categories: vscode
 * 切换到调试窗口，“添加配置”，然后选择“chrome”，vscode将会创建一个launch.json配置文件
 
 ## 启动调试
-1 启动服务（如npm run dev）
-2 在代码中设置断点，F5启动调试
+1. 启动服务（如npm run dev）
+2. 在代码中设置断点，F5启动调试
 
 
 
