@@ -21,7 +21,7 @@ Issues:
 ```bash
 Cannot connect to runtime process, timeout after 10000 ms - (reason: Cannot connect to the target: connect ECONNREFUSED 127.0.0.1:9222).
 ```
-solution： 退出chrome, 或者杀死chrome进程
+solution： 退出chrome, 或者杀死chrome进程，再按F5启动调试
 
 例子：
 https://github.com/Microsoft/vscode-chrome-debug/wiki/Examples
