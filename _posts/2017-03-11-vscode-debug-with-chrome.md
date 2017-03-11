@@ -18,7 +18,6 @@ categories: vscode
 
 Issues:
 
-1, 
 ```bash
 Cannot connect to runtime process, timeout after 10000 ms - (reason: Cannot connect to the target: connect ECONNREFUSED 127.0.0.1:9222).
 ```
