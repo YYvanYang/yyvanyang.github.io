@@ -29,7 +29,7 @@ https://github.com/Microsoft/vscode-chrome-debug/wiki/Examples
 
 
 launch.json配置例子代码
-```
+```json
 {
 	"version": "0.2.0",
 	"configurations": [{
