@@ -27,3 +27,32 @@ solution： 退出chrome, 或者杀死chrome进程
 例子：
 https://github.com/Microsoft/vscode-chrome-debug/wiki/Examples
 
+
+launch.json配置例子代码
+```
+{
+	"version": "0.2.0",
+	"configurations": [{
+			"name": "Launch localhost with sourcemaps",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:3000",
+			"sourceMaps": true,
+			"webRoot": "${workspaceRoot}"
+			// Uncomment this to run easily alongside another running instance of Chrome
+			// "userDataDir": "${workspaceRoot}/.vscode/chrome",
+
+			// Uncomment this to get diagnostic logs in the console
+			// "diagnosticLogging": true
+		},
+		{
+			"name": "Attach with sourcemaps",
+			"type": "chrome",
+			"request": "attach",
+			"port": 9222,
+			"sourceMaps": true,
+			"webRoot": "${workspaceRoot}"
+		}
+	]
+}
+```
