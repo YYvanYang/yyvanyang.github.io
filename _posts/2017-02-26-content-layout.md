@@ -141,6 +141,103 @@ From inside a stacking context, it doesn’t matter how large or small the z-ind
 ## Inline Block as a Layout Tool
 ## 行内块级元素作为布局工具
 
+让我们添加如下的代码片段：
 
+```html
+<p class="author-meta">
+  <!-- image from Jeremy Keith on Flickr: https://flic.kr/p/dwFRgH -->
+  <img class="author-image" src="images/author.jpg" alt="Arthur C. Lark">
+  <span class="author-info">
+    <span class="author-name">Written by Arthur C. Lark</span>
+    <a class="author-email" href="mailto:arthur.c.lark@example.com">arthur.c.lark@example.com</a>
+  </span>
+</p>
+```
+
+“The contents of the . author-meta paragraph will now line up, with the bottom edge of the image sitting on the baseline of the text. Any whitespace character, including for example the line break between the image and the line where the author info starts, will be rendered as a blank space. The width of that space depends on the font family and the font size (see Figure 6-12).”
+
+摘录来自: Andy Budd and Emil Björklund. “CSS Mastery”。 iBooks. 
+
+![]({{site.baseurl}}/images/inline-tool-1.png)
+
+Next, we’ll turn the image and the author info into inline blocks:
+
+```css
+.author-image,
+.author-info {
+  display: inline-block;
+}
+```
+
+In terms of rendering, the component looks the same at this stage. The difference is that we can start treating the image and the info as blocks. For example, we can put the name and e-mail address inside the author info on separate lines next to the image, by changing them to display as blocks:
+
+```css
+.author-name,
+.author-email {
+  display: block;
+}
+```
+
+We are now fairly close to the visual result of, for example, a floated image next to a block of text (as in the “media block” example from Chapter 3). One difference is that the last baseline of the author info block is aligned with the bottom of the image. We see the result in Figure 6-13, where we’ve also added a dotted outline around both image and author info to visualize how the two elements relate.
+
+![]({{site.baseurl}}/images/inline-tool-2.png)
+
+
+“We can now shift the author info relative to the image by changing the vertical-align property. When the alignment is set to top, the top of the author info block will align with the top of the image (see Figure 6-14).”
+
+```css
+.author-image,
+.author-info {
+  display: inline-block;
+  outline: 1px dashed red;
+}
+
+.author-name,
+.author-email {
+  display: block;
+}
+
+.author-info {
+  vertical-align: top;
+}
+```
+
+![]({{site.baseurl}}/images/inline-tool-3.png)
+
+> “Figure 6-14.Aligning the author info to the top of the image with vertical-align: top”
+
+Vertical Centering with Inline Block
+Now, let’s say that the design we want is for the author info block to be vertically centered in relation to the image. It may be tempting to try something like this:
+
+```css
+.author-info {
+  vertical-align: middle;
+}
+```
+
+…but that probably won’t have the effect you expected! Figure 6-15 shows the results.
+![]({{site.baseurl}}/images/inline-tool-4.png)
+Figure 6-15.The position of the author info when using vertical-align: middle
+
+This is where it gets somewhat tricky. The keyword middle when applied to inline blocks means “align the vertical center of this inline block with the middle of the x-height of the line of text.” In this instance, there is no inline text. Therefore, the image (being the tallest element on the line) is what determines the height of the line box and where the baseline ends up. The center of the x-height thus ends up just above the bottom of the image. In order to center the author info on the vertical center of the image, we need to make both elements refer to the same “middle”:
+
+```css
+.author-image,
+.author-info {
+  vertical-align: middle;
+}
+```
+
+摘录来自: Andy Budd and Emil Björklund. “CSS Mastery”。 iBooks. 
+
+“With the image being an inline block, it too becomes vertically centered on the same vertical point as the author info, resulting in the layout we wanted, shown in Figure 6-16.”
+
+![]({{site.baseurl}}/images/inline-tool-5.png)
+
+> “Figure 6-16.Applying vertical-align: middle to both image and author info vertically centers them on the same point”
+
+For the purpose of using inline block display as a layout tool, there are two important takeaways in terms of vertical alignment:
+* To make inline blocks align to the top (much like floats do), set vertical-align: top.
+* To vertically center contents with regard to each other, make sure they are all inline blocks, and then use vertical-align: middle.
 
 
