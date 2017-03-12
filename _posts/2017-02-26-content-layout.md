@@ -259,6 +259,22 @@ For the purpose of using inline block display as a layout tool, there are two im
 * To make inline blocks align to the top (much like floats do), set vertical-align: top.
 * To vertically center contents with regard to each other, make sure they are all inline blocks, and then use vertical-align: middle.
 
+### Vertical Centering Inside a Container Element
+
+That last bullet point in the previous list enables us to vertically center content inside a container of any height, with a bit of trickery. The only prerequisite is that the height of the container is set to a definite length.
+
+First of all, we apply a height to the .author-meta block. We’ll also add a border to make the changes a little easier to spot (see Figure 6-17).
+```css
+.author-meta {
+  height: 10em;
+  border: 1px solid #ccc;
+}
+```
+
+![]({{site.baseurl}}/images/inline-tool-6.png)
+
+
+
 
 
 
