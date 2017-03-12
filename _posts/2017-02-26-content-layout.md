@@ -206,7 +206,7 @@ We are now fairly close to the visual result of, for example, a floated image ne
 
 > “Figure 6-14.Aligning the author info to the top of the image with vertical-align: top”
 
-Vertical Centering with Inline Block
+### Vertical Centering with Inline Block
 Now, let’s say that the design we want is for the author info block to be vertically centered in relation to the image. It may be tempting to try something like this:
 
 ```css
@@ -216,8 +216,10 @@ Now, let’s say that the design we want is for the author info block to be vert
 ```
 
 …but that probably won’t have the effect you expected! Figure 6-15 shows the results.
+
 ![]({{site.baseurl}}/images/inline-tool-4.png)
-Figure 6-15.The position of the author info when using vertical-align: middle
+
+> Figure 6-15.The position of the author info when using vertical-align: middle
 
 This is where it gets somewhat tricky. The keyword middle when applied to inline blocks means “align the vertical center of this inline block with the middle of the x-height of the line of text.” In this instance, there is no inline text. Therefore, the image (being the tallest element on the line) is what determines the height of the line box and where the baseline ends up. The center of the x-height thus ends up just above the bottom of the image. In order to center the author info on the vertical center of the image, we need to make both elements refer to the same “middle”:
 
