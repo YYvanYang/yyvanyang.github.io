@@ -247,10 +247,6 @@ This is where it gets somewhat tricky. The keyword middle when applied to inline
   display: block;
 }
 
-.author-info {
-  vertical-align: middle;
-}
-
 .author-image,
 .author-info {
   vertical-align: middle;
