@@ -236,8 +236,31 @@ This is where it gets somewhat tricky. The keyword middle when applied to inline
 
 > “Figure 6-16.Applying vertical-align: middle to both image and author info vertically centers them on the same point”
 
+```css
+.author-image,
+.author-info {
+  display: inline-block;
+}
+
+.author-name,
+.author-email {
+  display: block;
+}
+
+.author-info {
+  vertical-align: middle;
+}
+
+.author-image,
+.author-info {
+  vertical-align: middle;
+}
+```
+
 For the purpose of using inline block display as a layout tool, there are two important takeaways in terms of vertical alignment:
 * To make inline blocks align to the top (much like floats do), set vertical-align: top.
 * To vertically center contents with regard to each other, make sure they are all inline blocks, and then use vertical-align: middle.
+
+
 
 
