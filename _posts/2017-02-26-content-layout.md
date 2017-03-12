@@ -264,6 +264,7 @@ For the purpose of using inline block display as a layout tool, there are two im
 That last bullet point in the previous list enables us to vertically center content inside a container of any height, with a bit of trickery. The only prerequisite is that the height of the container is set to a definite length.
 
 First of all, we apply a height to the .author-meta block. We’ll also add a border to make the changes a little easier to spot (see Figure 6-17).
+
 ```css
 .author-meta {
   height: 10em;
@@ -272,6 +273,48 @@ First of all, we apply a height to the .author-meta block. We’ll also add a bo
 ```
 
 ![]({{site.baseurl}}/images/inline-tool-6.png)
+
+In order to align them vertically we need to add another inline block element, which takes up 100% of the height. This element will force the alignment point for the middle keyword to end up in the middle of the container. For this, we’ll use a pseudo-element. Figure 6-18 shows how the hypothetical baseline gets calculated when this “ghost element” is added.
+
+![]({{site.baseurl}}/images/inline-tool-7.png)
+
+> Using a 100% tall pseudo-element to force the middle keyword to end up representing the vertical center of the container
+
+```css
+.author-meta:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+```
+
+At this point, the whole .author-meta container will in effect have a single line box taking up the whole height. As the pseudo-element is an inline block with vertical alignment set to middle, the other inline blocks will be vertically aligned to the center of the container. All we need to do now is to center the content horizontally. As inline blocks respond to text alignment, we need to use text-align:
+
+```css
+.author-meta {
+  height: 10em;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.author-info {
+  text-align: left;
+}
+```
+
+![]({{site.baseurl}}/images/inline-tool-8.png)
+
+In actual fact, the horizontal centering is not exactly right. Remember that any whitespace character in the line box will be rendered as a single blank space? The pseudo-element will create one such space, pushing the content to the right by a few pixels. We can negate the width of the blank space by applying a negative margin to the pseudo-element:
+
+```css
+.author-info:before {
+  margin-right: -.25em;
+}
+```
+
+Why -.25em? In this instance, it happens to be the width of a whitespace character in the current font. This is a bit of a “magic number,” and will vary with the font used. As such, it is not very robust, and not something that we recommend for any systematic layout work. 
+
+
 
 
 
