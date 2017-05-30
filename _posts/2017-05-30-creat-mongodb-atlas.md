@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Create a mongodb database with mongodb atlas"
+title:  "Create a mongodb database on mongodb atlas"
 categories: node
 ---
 
 ### Create a free account of mongodb
 
 1, Go to the official site https://www.mongodb.com/, click start free button.
-![](./start-free.png)
+![](../images/start-free.png)
 
 2, Fill in account profile and hit cotinue to submit sign up info.
 
@@ -18,10 +18,10 @@ categories: node
 
 2, Get the connect string of the database.
   - click connect
-    ![](./db-connect.png)
+    ![](../images/db-connect.png)
   - add IP whitelist
     You can add "0.0.0.0/0" by default. and then you can access it from anywhere.
-    ![](./conn-string.png)
+    ![](../images/conn-string.png)
   - copy the URI Connection String
     Replace <PASSWORD> with the db user you created, and <DATABASE> with the name of the database to which you wish to connect.
     
