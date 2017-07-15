@@ -3,7 +3,7 @@ layout: post
 title:  "BEM快速入门"
 ---
 
-> * 原文地址： [Quick start](http://en.bem.info/methodology/quick-start/)
+> * 原文地址： [http://en.bem.info/methodology/quick-start/](http://en.bem.info/methodology/quick-start/)
 > * 译者：Yvan Yang
 
 
