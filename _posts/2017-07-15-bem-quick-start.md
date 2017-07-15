@@ -12,14 +12,14 @@ title:  "BEM快速入门"
 BEM（块，元素，修饰符）是一种基于组件的Web开发方法。其背后的思想是将用户界面划分为独立的块。
 即使是复杂的UI，这也使界面开发变得简单快捷，并且允许重复使用现有的代码，而无需复制和粘贴。
 
-## Contents
+## 内容
 
 * [块](#块)
 * [元素](#元素)
 * [我应该创建块还是元素呢？](#我应该创建块还是元素呢)
 * [修饰符](#修饰符)
 * [混合](#混合)
-* [File structure](#file-structure)
+* [文件结构](#文件结构)
 
 ## 块
 
@@ -88,9 +88,9 @@ BEM（块，元素，修饰符）是一种基于组件的Web开发方法。其�
 
 # 元素使用指南
 
-* [Nesting](#nesting-1)
-* [Membership](#membership)
-* [Optionality](#optionality)
+* [嵌套](#嵌套)
+* [成员关系](#成员关系)
+* [可选性](#可选性)
 
 ## 嵌套 
 
@@ -389,5 +389,5 @@ search-form/                           # Directory of the search-form
 >分支文件结构假设在生产中将代码组合成共享项目文件。
 
 您不需要遵循推荐的文件结构。您可以使用遵循BEM原则的任何其他项目结构来组织文件结构，例如：
-* Flat
-* Flex
+* [Flat](http://en.bem.info/methodology/filestructure/#flat)
+* [Flex](http://en.bem.info/methodology/filestructure/#flex)
