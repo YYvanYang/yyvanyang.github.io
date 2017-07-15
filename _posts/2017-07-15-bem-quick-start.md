@@ -308,7 +308,7 @@ BEM方法中采用的组件方法也适用于文件结构中的项目。块，�
 * 元素和修饰符的实现分为单独的技术文件。例如，`header__input.js`和`header_theme_islands.css`。
 
 范例
-```html
+```bash
 search-form/                           # Directory of the search-form
 
     __input/                           # Subdirectory of the search-form__input
