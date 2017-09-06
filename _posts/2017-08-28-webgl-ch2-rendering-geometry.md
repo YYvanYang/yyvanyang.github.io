@@ -131,3 +131,17 @@ To summarize, for every buffer, we want to:
 - Pass the buffer data using one of the typed arrays
 - Unbind the buffer
 
+## The drawArrays and drawElements functions
+
+函数drawArrays和drawElements用于写入帧缓冲区（framebuffer）。
+drawArrays以缓冲区中定义的顺序使用顶点数据来创建几何。相反，drawElements使用索引来访问顶点数据缓冲区并创建几何。
+
+### Using drawArrays
+当有关索引的信息不可用时，我们将调用drawArrays。在大多数情况下，当几何体如此简单，使用drawArrays来定义索引是一个过度的;例如，当我们要渲染一个三角形或一个矩形时。在这种情况下，WebGL将按照VBO中定义顶点坐标的顺序创建几何。所以如果你有连续的三角形（就像我们的梯形例子），你必须在VBO中重复这些坐标。
+
+### Using drawElements
+与以前没有定义IBO的情况不同，drawElements允许我们使用IBO来告诉WebGL如何渲染几何。记住drawArrays使用VBO。这意味着顶点着色器将处理重复的顶点，使其在VBO中显示多次。相反，drawElements使用索引。因此，顶点仅被处理一次，并且可以使用它们在IBO中定义的次数。此功能可以减少GPU上所需的内存和处理。
+
+当我们使用drawElements时，我们至少需要两个缓冲区：一个VBO和一个IBO。顶点着色器将在VBO中的每个顶点执行，然后渲染管线将使用IBO将几何体组装成三角形。
+
+>当drawElements被调用时，它使用来自启用数组的计数顺序元素，从偏移开始构造几何图元序列。 Mode指定了什么样的基元被构造，以及数组元素如何构造这些基元。如果启用了多个数组，则使用每个数组
