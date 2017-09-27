@@ -6,7 +6,7 @@ title:  "移动端web开发Canvas画图的那些坑"
 # 问题1：
 当我们通过构造一个image对象的时候，并用服务器端返回的图片（*base64格式*）作为这个image对象的src的图象源时，image的onload事件在某些设备上会加载失败。
 
-```javascript
+```js
 let imgSourceData = api.getBase64() // 从服务器端返回的base64格式问图片
 let img = new Image()
 img.onload = function () {
@@ -23,7 +23,7 @@ img.src = imgSourceData
 <img id="imageSource" src="imgSourceData">
 ```
 
-```javascript
+```js
 let imgSourceData = api.getBase64() // 从服务器端返回的base64格式问图片
 let img = new Image()
 img.onload = function () {
@@ -54,7 +54,7 @@ Canvas画图（多张图片合并）时，比例失调，总是无法准确计�
 
 这样合并出的图片跟设计上的才会吻合。
 
-```javascript
+```js
 
 var img2 = vm.$refs.refPhoto;
       
