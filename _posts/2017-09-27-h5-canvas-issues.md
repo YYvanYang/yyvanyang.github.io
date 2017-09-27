@@ -5,6 +5,7 @@ title:  "移动端web开发Canvas画图的那些坑"
 
 # 问题1：
 当我们通过构造一个image对象的时候，并用服务器端返回的图片（*base64格式*）作为这个image对象的src的图象源时，image的onload事件在某些设备上会加载失败。
+
 ```javascript
 let imgSourceData = api.getBase64() // 从服务器端返回的base64格式问图片
 let img = new Image()
@@ -14,8 +15,10 @@ img.onload = function () {
 
 img.src = imgSourceData
 ```
+
 方案：
 在页面上创建一个img标签
+
 ```html
 <img id="imageSource" src="imgSourceData">
 ```
