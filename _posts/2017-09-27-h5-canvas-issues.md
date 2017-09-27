@@ -41,9 +41,9 @@ img.src = src
 Canvas画图（多张图片合并）时，比例失调，总是无法准确计算图片比例的问题。
 
 方案：
-1，需要将各个图片按照设计稿的排版在页面上布局好。
-2，通过getBoundingClientRect()方法获得元素的长和宽。
-3，获得设备的设备像素比window.devicePixelRatio
+1. 需要将各个图片按照设计稿的排版在页面上布局好。
+2. 通过getBoundingClientRect()方法获得元素的长和宽。
+3. 获得设备的设备像素比window.devicePixelRatio
 
 ```
 将canvas的长宽 = 最终容器的长宽（由getBoundingClientRect()获得）* window.devicePixelRatio
