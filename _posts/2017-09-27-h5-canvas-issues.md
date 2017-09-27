@@ -56,65 +56,65 @@ Canvas画图（多张图片合并）时，比例失调，总是无法准确计�
 
 ```js
 
-var img2 = vm.$refs.refPhoto;
+var img = vm.$refs.refPhoto;
       
-      img2.onload = function () {
-        let devicePixelRatio = window.devicePixelRatio
-        
-        var expectWidth = vm.domFinalPhotoRect.width;
-        var expectHeight = vm.domFinalPhotoRect.height;
-      
-        var photoBarRectWidth = vm.domPhotoBarRect.width;
-        var photoBarRectHeight = vm.domPhotoBarRect.height;
+img.onload = function () {
+    let devicePixelRatio = window.devicePixelRatio
 
-        var savingTextIntoPhotoWidth = vm.domSavingTextIntoPhotoRect.width;
-        var savingTextIntoPhotoHeight = vm.domSavingTextIntoPhotoRect.height;
+    var expectWidth = vm.domFinalPhotoRect.width;
+    var expectHeight = vm.domFinalPhotoRect.height;
 
-        var qrcodeexpectWidth = vm.domQrPhotoRect.width;
-        var qrcodeexpectHeight = vm.domQrPhotoRect.height;
+    var photoBarRectWidth = vm.domPhotoBarRect.width;
+    var photoBarRectHeight = vm.domPhotoBarRect.height;
 
-        var canvas = document.createElement("canvas");
-        var ctx = canvas.getContext("2d");
-        canvas.width = expectWidth * devicePixelRatio;
-        canvas.height = expectHeight * devicePixelRatio;
-    
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var savingTextIntoPhotoWidth = vm.domSavingTextIntoPhotoRect.width;
+    var savingTextIntoPhotoHeight = vm.domSavingTextIntoPhotoRect.height;
 
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+    var qrcodeexpectWidth = vm.domQrPhotoRect.width;
+    var qrcodeexpectHeight = vm.domQrPhotoRect.height;
 
-        ctx.drawImage(this, 0, 0, canvas.width, vm.domPhotoRect.height*devicePixelRatio);
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = expectWidth * devicePixelRatio;
+    canvas.height = expectHeight * devicePixelRatio;
 
-        ctx.drawImage(vm.$refs.savingTextIntoPhoto, 
-        30, 
-        vm.domPhotoRect.height * devicePixelRatio, 
-        savingTextIntoPhotoWidth * devicePixelRatio, 
-        savingTextIntoPhotoHeight * devicePixelRatio);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    ctx.drawImage(this, 0, 0, canvas.width, vm.domPhotoRect.height*devicePixelRatio);
+
+    ctx.drawImage(vm.$refs.savingTextIntoPhoto, 
+    30, 
+    vm.domPhotoRect.height * devicePixelRatio, 
+    savingTextIntoPhotoWidth * devicePixelRatio, 
+    savingTextIntoPhotoHeight * devicePixelRatio);
 
 
-        let boxHeight = vm.domPhotoBarRect.height * devicePixelRatio
-        let qrHeight = qrcodeexpectHeight * devicePixelRatio
+    let boxHeight = vm.domPhotoBarRect.height * devicePixelRatio
+    let qrHeight = qrcodeexpectHeight * devicePixelRatio
 
-        let TopGap = 0;
-        let rightGap = 10;
+    let TopGap = 0;
+    let rightGap = 10;
 
-        if (boxHeight > qrHeight) {
-          TopGap = (boxHeight - qrHeight) / 2
-        }
+    if (boxHeight > qrHeight) {
+        TopGap = (boxHeight - qrHeight) / 2
+    }
 
-        rightGap = Math.max(10, TopGap)
+    rightGap = Math.max(10, TopGap)
 
-        ctx.drawImage(vm.$refs.qr, 
-        canvas.width - qrcodeexpectWidth * devicePixelRatio - rightGap, 
-        vm.domPhotoRect.height * devicePixelRatio  + TopGap, 
-        qrcodeexpectWidth * devicePixelRatio, 
-        qrcodeexpectHeight * devicePixelRatio);
-        
+    ctx.drawImage(vm.$refs.qr, 
+    canvas.width - qrcodeexpectWidth * devicePixelRatio - rightGap, 
+    vm.domPhotoRect.height * devicePixelRatio  + TopGap, 
+    qrcodeexpectWidth * devicePixelRatio, 
+    qrcodeexpectHeight * devicePixelRatio);
 
-        var base64 = canvas.toDataURL("image/jpeg", 1);
-        vm.finalPhoto = base64
-  
-      }
+
+    var base64 = canvas.toDataURL("image/jpeg", 1);
+    vm.finalPhoto = base64
+
+}
 
 
 
