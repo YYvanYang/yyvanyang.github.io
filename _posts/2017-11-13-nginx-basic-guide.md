@@ -67,4 +67,6 @@ server {
 This server will filter requests ending with .gif, .jpg, or .png and map them to the /data/images directory (by adding URI to the root directive’s parameter) and pass all other requests to the proxied server configured above.
 
 
+refrence: [Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html)
+
 
