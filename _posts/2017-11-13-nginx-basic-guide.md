@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Beginner’s Guide"
+title:  "nginx Beginner’s Guide"
 ---
 
 # Starting, Stopping, and Reloading Configuration
