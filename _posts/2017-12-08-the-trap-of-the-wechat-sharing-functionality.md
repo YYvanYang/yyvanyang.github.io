@@ -74,7 +74,10 @@ DEMO中并没有体现这一点。如下图所示：
 
 
 
+### 参考文档
 
+* [微信JS-SDK说明文档][1]
+* [微信JS-SDK说明文档][_1](企业号开发者中心，`旧版`)
 
 
 [1]: https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
