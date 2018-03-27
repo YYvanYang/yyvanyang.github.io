@@ -75,6 +75,7 @@ getMapScript().then((BMap) => {
 
 弹窗抖动效果实现
      ```css
+
      /* x轴翻转 */
       .show-popup-window {
         transition-property: all;
@@ -104,6 +105,7 @@ getMapScript().then((BMap) => {
     ```
 
     ```css
+
     /* y轴翻转 */
     .show-popup-window {
         transition-property: all;
@@ -144,6 +146,7 @@ getMapScript().then((BMap) => {
 可以通过 'path://' 将图标设置为任意的矢量路径。这种方式相比于使用图片的方式，不用担心因为缩放而产生锯齿或模糊，而且可以设置为任意颜色。路径图形会自适应调整为合适的大小。路径的格式参见 [SVG PathData](https://www.w3.org/TR/SVG/paths.html#PathData)。可以从 Adobe Illustrator 等工具编辑导出。
 
 ```js
+let options = {
 legend: {
       data: legend.map(x => {
         let _event = eventType[x]
@@ -154,6 +157,7 @@ legend: {
         }
       }),
       bottom: 'bottom'
-    },
+    }
+}
     // ...
     ```
