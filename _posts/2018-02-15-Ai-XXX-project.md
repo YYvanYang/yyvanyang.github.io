@@ -74,9 +74,10 @@ getMapScript().then((BMap) => {
 主要使用百度提供的类库（http://api.map.baidu.com/library/InfoBox/1.2/docs/symbols/BMapLib.InfoBox.html）
 
 弹窗抖动效果实现
-     ```css
 
-     /* x轴翻转 */
+      #### x轴翻转
+
+    ```css
       .show-popup-window {
         transition-property: all;
             transform-origin: center bottom;
@@ -104,9 +105,11 @@ getMapScript().then((BMap) => {
 
     ```
 
+    ### y轴翻转
+
     ```css
 
-    /* y轴翻转 */
+
     .show-popup-window {
         transition-property: all;
         transform-origin: right center;
@@ -146,8 +149,9 @@ getMapScript().then((BMap) => {
 可以通过 'path://' 将图标设置为任意的矢量路径。这种方式相比于使用图片的方式，不用担心因为缩放而产生锯齿或模糊，而且可以设置为任意颜色。路径图形会自适应调整为合适的大小。路径的格式参见 [SVG PathData](https://www.w3.org/TR/SVG/paths.html#PathData)。可以从 Adobe Illustrator 等工具编辑导出。
 
 ```js
+
 let options = {
-legend: {
+  legend: {
       data: legend.map(x => {
         let _event = eventType[x]
         _event = _event ? _event : x
@@ -159,5 +163,41 @@ legend: {
       bottom: 'bottom'
     }
 }
-    // ...
     ```
+
+## video重新初始化
+
+使用vue的条件渲染v-if无法和video接口的dispose（remove dom）匹配, 故采用原生js添加video节点
+
+```js
+
+// add dom
+ function addVideoElement() {
+      // <video class="video-js" width="392" height="260">
+      // </video>
+
+      var _video = document.createElement('video');
+      _video.className = 'video-js';
+      _video.style.width = '392px';
+      _video.style.height = '260px';
+
+      this.domPlayer = _video;
+
+      let parentNode = this.$refs.playerBox;
+
+      parentNode.insertBefore(_video, parentNode.firstChild);
+    },
+
+    // remove dom
+    cleanup() {
+      // http://docs.videojs.com/docs/guides/removing-players.html
+
+      let oldPlayer = this.domPlayer;
+
+      if (oldPlayer) {
+        console.log('destroyed live');
+        videojs(oldPlayer).dispose();
+      }
+    },
+
+```
