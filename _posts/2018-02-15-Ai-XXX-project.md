@@ -75,9 +75,9 @@ getMapScript().then((BMap) => {
 
 弹窗抖动效果实现
 
-      #### x轴翻转
+#### x轴翻转
 
-    ```css
+```css
       .show-popup-window {
         transition-property: all;
             transform-origin: center bottom;
@@ -103,11 +103,11 @@ getMapScript().then((BMap) => {
         }
 
 
-    ```
+```
 
-    ### y轴翻转
+#### y轴翻转
 
-    ```css
+```css
 
 
     .show-popup-window {
@@ -133,7 +133,7 @@ getMapScript().then((BMap) => {
           opacity: 1
         }
       }
-    ```
+```
 
 ## wuex的使用
 
@@ -163,7 +163,7 @@ let options = {
       bottom: 'bottom'
     }
 }
-    ```
+```
 
 ## video重新初始化
 
