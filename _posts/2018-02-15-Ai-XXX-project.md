@@ -14,7 +14,8 @@
 
 优化后(用js异步加载baidu map js):
 
-```JS
+```js
+
 // loadMap.js
 // load baidu map js
 export function getMapScript () {
@@ -53,6 +54,7 @@ export function getMapScript () {
 ```
 
 ```js
+
 // view
 // init baidu map
 import { getMapScript } from "./loadMap.js";
