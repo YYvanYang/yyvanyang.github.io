@@ -203,8 +203,8 @@ else
   cd ..
 fi
 
-echo "Building docker.hz.ulsee.com/hawkeye-manage/fed:1.0.0 image..."
-docker build -t docker.hz.ulsee.com/hawkeye-manage/fed:1.0.0 .
+echo "Building yvan.com/fed:1.0.0 image..."
+docker build -t yvan.com/fed:1.0.0 .
 
 ```
 
@@ -223,6 +223,11 @@ if(docker images -q nginx-base){
 
 }
 
-# "Building docker.hz.ulsee.com/hawkeye-manage/fed:1.0.0 image..."
-docker build -t docker.hz.ulsee.com/hawkeye-manage/fed:1.0.0 .
+# "Building yvan.com/fed:1.0.0 image..."
+docker build -t yvan.com/fed:1.0.0 .
 ```
+
+##### 參考
+
+- https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/
+- https://www.nginx.com/blog/websocket-nginx/
